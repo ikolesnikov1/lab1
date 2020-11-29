@@ -174,7 +174,7 @@ void LinkedList::push_back(const value_type &val) {
 }
 
 void LinkedList::push_front(const value_type &val) {
-    insert(end() + 1, val);
+    insert(begin(), val);
     count++;
 }
 
