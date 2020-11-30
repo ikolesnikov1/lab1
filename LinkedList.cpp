@@ -212,18 +212,5 @@ bool operator==(const LinkedList &left, const LinkedList &right) {
 }
 
 LinkedList operator+(const LinkedList & left, const LinkedList & right) {
-    LinkedList newList;
-
-    if (!left.empty()) {
-        for (LinkedList::const_iterator it = left.cbegin(); it != left.cend(); it++) {
-            newList.push_back((*it));
-        }
-    }
-
-    if (!right.empty()) {
-        for (LinkedList::const_iterator it = right.cbegin(); it != right.cend(); it++) {
-            newList.push_back((*it));
-        }
-    }
-    return newList;
+    return LinkedList(left) += LinkedList(right);
 }
